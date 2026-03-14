@@ -1,10 +1,10 @@
-# 🔍 Portal da Transparência Bot
+# Portal da Transparência Bot
 
 Robô de automação web para consulta de pessoas físicas no [Portal da Transparência](https://portaldatransparencia.gov.br), desenvolvido em Python com Playwright. Suporta busca por CPF, NIS ou Nome, coleta dados de benefícios sociais, executa consultas simultâneas e expõe uma API REST documentada via Swagger.
 
 ---
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 portal-transparencia-bot/
@@ -19,7 +19,7 @@ portal-transparencia-bot/
 
 ---
 
-## ⚙️ Instalação
+## Instalação
 
 **Pré-requisitos:** Python 3.10+
 
@@ -42,7 +42,7 @@ playwright install chromium
 
 ---
 
-## 🚀 Uso
+## Uso
 
 ### Via linha de comando (CLI)
 
@@ -105,7 +105,7 @@ python executar_simultaneo.py --max-simultaneos 5
 
 ---
 
-## 📦 Formato de Saída (JSON)
+## Formato de Saída (JSON)
 
 ```json
 {
@@ -149,7 +149,7 @@ python executar_simultaneo.py --max-simultaneos 5
 
 ---
 
-## 🧪 Testes
+## Testes
 
 ```bash
 # Instalar dependências de teste
@@ -172,7 +172,7 @@ pytest test_bot.py -v
 
 ---
 
-## 🛠️ Decisões Técnicas
+## Decisões Técnicas
 
 ### Playwright vs Selenium
 Playwright foi escolhido por suporte nativo a `async/await`, execução headless mais estável, API moderna com seletores mais precisos e melhor suporte a múltiplos contextos isolados — essencial para execuções simultâneas.
@@ -191,7 +191,7 @@ Três exceções tipadas (`ErroSemResultados`, `ErroTempoResposta`, `ErroParamet
 
 ---
 
-## 📋 Dependências
+## Dependências
 
 ```
 playwright
