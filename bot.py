@@ -35,7 +35,7 @@ except ImportError:
 
 BASE_URL = "https://portaldatransparencia.gov.br"
 BENEFICIOS_ALVO = ["Auxílio Brasil", "Auxílio Emergencial", "Bolsa Família"]
-TIMEOUT_MS = 30_000
+TIMEOUT_MS = 60_000
 
 # ─────────────────────────────────────────────
 # EXCEÇÕES CUSTOMIZADAS — cenários do desafio
