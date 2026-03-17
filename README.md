@@ -205,7 +205,51 @@ pytest-asyncio
 
 ---
 
-## ⚠️ Observações
+## Parte 2 — Hiperautomação (Make.com)
+
+A Parte 2 implementa um workflow automatizado no **Make.com** que integra o bot com Google Drive e Google Sheets, acionado via API em produção.
+
+### Fluxo do Workflow
+
+```
+[1] HTTP Request → [2] Google Drive → [3] Google Sheets
+```
+
+**Módulo 1 — HTTP Request**
+Chama a API do bot em produção (`https://portal-transparencia-bot.onrender.com/consultar`) com o CPF desejado e recebe o JSON com os dados coletados.
+
+**Módulo 2 — Google Drive**
+Salva o JSON retornado como arquivo na pasta `portal-transparencia-consultas` no Google Drive, com nome no formato:
+```
+[CPF]_[DATA_HORA].json
+```
+
+**Módulo 3 — Google Sheets**
+Adiciona uma linha na planilha centralizada com os metadados da consulta:
+
+| ID | Nome | CPF | Data_Hora | Link_JSON |
+|----|------|-----|-----------|-----------|
+| 2026-03-17T23:16:07... | FULANO DE TAL | 12345678900 | 17/03/2026 20:18:11 | https://drive.google.com/... |
+
+### API em Produção
+
+A API está disponível publicamente em:
+
+**`https://portal-transparencia-bot.onrender.com`**
+
+| Rota | Descrição |
+|------|-----------|
+| `/consultar` | Consulta pessoa física |
+| `/health` | Status da API |
+| `/docs` | Documentação Swagger interativa |
+
+### Decisão Técnica — Make.com vs Alternativas
+
+Make.com foi escolhido pela interface visual intuitiva e integração nativa com Google Drive e Google Sheets sem configuração extra. A autenticação foi configurada via OAuth 2.0 com Google Cloud Console para funcionar com conta Gmail pessoal.
+
+---
+
+## Observações
 
 - O bot acessa dados **públicos** do Portal da Transparência (gov.br).
 - CPFs exibidos são **mascarados** pelo próprio portal — o bot não armazena CPFs completos.
