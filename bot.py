@@ -252,10 +252,10 @@ async def buscar_pessoa(
         todos_links = await page.locator("a[href*='/busca/pessoa-fisica/']").all()
         print(f"[DEBUG] Total links encontrados: {len(todos_links)}")
 
-        for i, l in enumerate(todos_links[:5]):
-            href = await l.get_attribute("href")
-            txt = await l.inner_text()
-            print(f"  [{i}] href={href} | texto={txt.strip()[:40]}")
+        primeiro_link = todos_links[0]
+        href = await primeiro_link.get_attribute("href")
+        txt = await primeiro_link.inner_text()
+        print(f"  [0] href={href} | texto={txt.strip()[:40]}")
 
         if not todos_links:
             # Nenhum card renderizado — comportamento de CPF/NIS inexistente
