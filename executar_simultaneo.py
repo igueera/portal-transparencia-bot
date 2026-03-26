@@ -26,9 +26,9 @@ from bot import executar_consulta
 # Edite aqui para adicionar suas próprias consultas.
 # ─────────────────────────────────────────────
 CONSULTAS = [
-    {"cpf": "70628973454"},                                      # CPF válido
+    {"cpf": "70628973453"},                                      # CPF válido
     {"cpf": "00000000000"},                                      # CPF inválido
-    {"nome": "ALINE HEMELY FERREIRA DA SILVA"},                  # Nome válido
+    {"nome": "IGOR LIMA GABRIEL"},                               # Nome válido
     {"nome": "XYZXYZ INEXISTENTE TESTE"},                        # Nome inexistente
     {"nome": "FERREIRA", "filtro_beneficiario": True},           # Com filtro social
 ]
